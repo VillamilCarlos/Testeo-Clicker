@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+.login-container {
+        margin: 0 auto;
+        max-width: 1980px;
+        flex-direction: column;
+        font-family: 'Roboto', sans-serif;
+}
+
+/* Inicio header */
+
+.header {
+    width: 100%;    
+    display: flex;
+    background-color: #06283D;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    position: fixed;
+    z-index: 30;
+}
+
+.header-logo {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo > img{
+    width: auto;
+    height: 80px;
+    min-width: 50px;
+    cursor: pointer;
+}
+
+.header-navbar {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.header-navbar > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+}
+
+.header-navbar > ul > li > a {
+    color: #DFF6FF;
+    font-size: clamp(15px, 3vw, 24px);
+}
+
+
+.titulo-pagina > h2 {
+    color: #DFF6FF;
+    font-size: clamp(24px, 5vw, 65px);
+}
+
+.titulo-pagina > h2 > span {
+    color: #47B5FF;
+}
+
+.header-navbar > ul > li {
+   position: relative;
+}
+
+.header-navbar > ul > li ::before {
+   content: "";
+   height: 3px;
+   width: 0%;
+   background-color: #47B5FF;
+   position: absolute;
+   left: 0;
+   bottom: -9px;
+   transition: 0.5s ease-out;
+}
+
+.header-navbar > ul > li:hover ::before {
+    width: 100%;
+}
+
+.header-navbar > ul > i {
+    font-size: 35px;
+    color: #8dc5eb;
+}
+
+.header-navbar > ul > i:hover {
+    cursor: pointer;
+    color: #fafafa;
+}
+
+.header > label {
+    color: #8dc5eb;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 90px;
+    background: rgba(0, 0, 0, .95);
+    text-align: center;
+    font-size: clamp(25px, 5vw, 50px);
+    transition: all .6s;
+}
+
+.nav-menu > li {
+    display: none;
+    line-height: 30px;
+    margin: 50px 0px;
+    transition: all .6s;
+}
+
+.nav-menu > li > a {
+    color: #8dc5eb;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-menu > li > a:hover {
+    color: #47B5FF;
+}
+
+.nav-menu > li > i {
+    color: #8dc5eb;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.nav-menu > li > i:hover {
+    color: #47B5FF;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .nav-menu {
+    height: 100vh;
+}
+
+#check:checked ~ .nav-menu li {
+    display: block;
+}
+
+@media screen and (max-width:690px){
+    .header-navbar{
+        display: none;
+    }
+}
+
+@media screen and (min-width:690px){
+    .header > label {
+        margin-left: 50px;
+    }
+
+    .header > label {
+        display: none;
+    }
+
+    .nav-menu {
+        position: relative;
+        height: 100px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: right;
+        margin-right: 50px;
+    }
+    
+    .nav-menu li {
+        display: inline-block;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+        display: none;
+    }
+}
+
+
+/* Fin header */
+
+/* Inicio Login */
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: #fafafa;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 90px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.form-container > h1 {
+    font-size: clamp(12px, 5vw, 35px);
+    color: #fafafa;
+}
+
+.form-container > h1 > span {
+    color: #47B5FF;
+}
+
+.form-container > input {
+    width: 350px;
+    margin-bottom: 20px;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: clamp(10px, 5vw, 14px);
+}
+
+#boton {
+    border: solid 2px;
+    border-radius: 20px;
+    padding: 10px 30px 10px 30px;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fafafa;
+    font-size: clamp(8px, 5vw, 17px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+#boton:hover {
+    background-color: #8dc5eb;
+    color: black;   
+}
+
+@media (max-width:768px) {
+    .form-container > input {
+        width: 240px;
+    }
+}
